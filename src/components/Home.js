@@ -1,15 +1,13 @@
 import React from 'react';
 import NavBar from './NavBar'
-import Availability from './Availability';
 
 
-function App() {
+function Home() {
   return (
     <div className="badger-sett">
       <NavBar />
-      <Availability />
     </div>
   );
 }
 
-export default App;
+export default Home;

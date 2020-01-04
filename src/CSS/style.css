@@ -187,3 +187,29 @@ h2 {
 h3 {
   font-size: 3rem;
 }
+.header {
+  color: #fff;
+  background-color: #692b82;
+}
+.header div {
+  display: inline;
+}
+h1 {
+  display: inline;
+  padding: 8px;
+}
+h1 a {
+  text-decoration: none !important;
+  color: #fff;
+}
+ul {
+  display: inline;
+}
+ul li {
+  display: inline;
+  padding: 10px;
+}
+ul li a {
+  text-decoration: none !important;
+  color: #fff;
+}

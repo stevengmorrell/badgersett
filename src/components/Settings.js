@@ -2,15 +2,15 @@ import React from 'react';
 import NavBar from './NavBar';
 
 
-class Availability extends React.Component {
+class Settings extends React.Component {
     render() {
         return (
             <React.Fragment>
                 <NavBar />
-                <p>Availability</p>
+                <p>Settings</p>
             </React.Fragment>
         )
     }   
 }
 
-export default Availability;
+export default Settings;
