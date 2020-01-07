@@ -16,9 +16,9 @@ class NavBar extends React.Component {
                     </ul>
                 </div>
                 <div className="nav-right">
-                    <h3>Tom Wallis</h3>
-                    <h4>Settings</h4>
-                    <h4>Log Out</h4>
+                    <h5>Tom Wallis</h5>
+                    <h5>Settings</h5>
+                    <h5>Log Out</h5>
                 </div>
             </div>
         )

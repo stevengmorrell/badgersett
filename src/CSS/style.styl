@@ -5,7 +5,7 @@
     color white 
     background-color purple
     div
-        display inline
+        display inline-block
     
 
 h1 
@@ -24,7 +24,43 @@ ul
             text-decoration none !important
             color white
 
+.nav-right
+    h5
+        margin 0
+        text-align right
 
-            
+.availWrap
+    padding 10px
+    margin 10px
+    border 2px solid purple
+    max-width 420px
     
+    .availtoprow
+        display grid
+        grid-template-columns: 70% 30%
         
+    .availbotrow
+        display grid
+        grid-template-columns: 50% 50%
+      
+        .attendbox
+            background green
+            margin 10px
+            border 1px solid black
+            height 50px
+            font-size: 1 rem
+        .nattendbox
+            background red
+            height 50px
+            color white
+            font-size: 1 rem
+            border 1px solid black
+            margin 10px
+            
+.greyed
+    background-color buttonface !important
+    color black !important
+
+.detailsWrap p
+    margin 5px
+    font-size 2rem

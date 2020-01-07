@@ -1,11 +1,11 @@
 import React from 'react';
-import NavBar from './NavBar'
+import Welcome from './Welcome';
 
 
 function Home() {
   return (
     <div className="badger-sett">
-      <NavBar />
+      <Welcome />
     </div>
   );
 }
