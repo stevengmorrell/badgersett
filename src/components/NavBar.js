@@ -7,16 +7,18 @@ class NavBar extends React.Component {
             <div className="header">
                 <div className="nav-left">
                     <h1>
-                        BadgerSett
+                        <a href="/">BadgerSett</a>
                     </h1>
-                    <span className="nav-item">Attendance</span>
-                    <span className="nav-item">Line Ups</span>
-                    <span className="nav-item">Playbooks</span>
+                    <ul>
+                        <li><a href='/'>Home</a></li>
+                        <li><a href='/availability'>Availability</a></li>
+                        <li><a href='/lineups'>Lineups</a></li>
+                    </ul>
                 </div>
                 <div className="nav-right">
-                    <h3>Your Name</h3>
-                    <h4>Settings</h4>
-                    <h4>Log Out</h4>
+                    <h5>Tom Wallis</h5>
+                    <h5>Settings</h5>
+                    <h5>Log Out</h5>
                 </div>
             </div>
         )

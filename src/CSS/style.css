@@ -187,3 +187,70 @@ h2 {
 h3 {
   font-size: 3rem;
 }
+.header {
+  color: #fff;
+  background-color: #692b82;
+}
+.header div {
+  display: inline-block;
+}
+h1 {
+  display: inline;
+  padding: 8px;
+}
+h1 a {
+  text-decoration: none !important;
+  color: #fff;
+}
+ul {
+  display: inline;
+}
+ul li {
+  display: inline;
+  padding: 10px;
+}
+ul li a {
+  text-decoration: none !important;
+  color: #fff;
+}
+.nav-right h5 {
+  margin: 0;
+  text-align: right;
+}
+.availWrap {
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid #692b82;
+  max-width: 420px;
+}
+.availWrap .availtoprow {
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+.availWrap .availbotrow {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.availWrap .availbotrow .attendbox {
+  background: #008000;
+  margin: 10px;
+  border: 1px solid #000;
+  height: 50px;
+  font-size: 1rem;
+}
+.availWrap .availbotrow .nattendbox {
+  background: #f00;
+  height: 50px;
+  color: #fff;
+  font-size: 1rem;
+  border: 1px solid #000;
+  margin: 10px;
+}
+.greyed {
+  background-color: buttonface !important;
+  color: #000 !important;
+}
+.detailsWrap p {
+  margin: 5px;
+  font-size: 2rem;
+}
