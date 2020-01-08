@@ -1,6 +1,7 @@
 import React from 'react';
 
-
+// add an if based on auth to display a separate nav bar depending on auth status,
+// public, private, privatecoach
 class NavBar extends React.Component {
     render() {
         return (
@@ -13,6 +14,7 @@ class NavBar extends React.Component {
                         <li><a href='/'>Home</a></li>
                         <li><a href='/availability'>Availability</a></li>
                         <li><a href='/lineups'>Lineups</a></li>
+                        {/* coach options to be inserted here */}
                     </ul>
                 </div>
                 <div className="nav-right">

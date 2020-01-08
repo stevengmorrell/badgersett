@@ -3,15 +3,16 @@ import React from 'react';
 
 class Attender extends React.Component {
     render() { 
-        const { date, image, location, name, time } = this.props.details;
+        const { date, image, location, name, starttime, endtime, description } = this.props.details;
         return (
             <React.Fragment>
                 <div className = "availWrap">
                     <div className="availtoprow">
                         <div className="detailsWrap">
-                            <p>{name}</p>
-                            <p>{time} {date}</p>
+                            <strong>{name}</strong>
+                            <p>{starttime}-{endtime} {date}</p>
                             <p>{location}</p>
+                            <p>{description}</p>
                         </div>
                         <img className="imgBox" src={image} alt="Football training" width="80" height ="80" />
                     </div>
