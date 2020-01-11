@@ -23,10 +23,19 @@ class Availability extends React.Component {
     loadSampleEvents = () => {
         this.setState({ events: eventitems });
     };
+
+
     // load sample events
    componentDidMount() {
-        this.loadSampleEvents()
+        this.loadSampleEvents();
+
+       
     } ;
+
+//   componentDidUpdate() {
+//     console.log();
+        
+//   };
 
     //Test month selector
 
@@ -35,6 +44,10 @@ class Availability extends React.Component {
     }
     
     render() {
+
+        
+        
+       
         return (
             <React.Fragment>
                 <NavBar />
@@ -45,13 +58,15 @@ class Availability extends React.Component {
                     <option value="Mar">Mar</option>
                     <option value="Apr">Apr</option>
                 </select>
+
                 {Object.keys(this.state.events)
-                
+                .filter(key => this.state.events[key].month === this.state.month)
                 .map(key => (
                     <Attender
                         key={key}
                         index={key}
-                        details={this.state.events[key]}
+                        details={this.state.events[key]
+                }
                     />
                 ))
                
