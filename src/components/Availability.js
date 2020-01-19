@@ -1,8 +1,9 @@
 import React from 'react';
-import eventitems from '../sample-event.js';
 import Attender from './Attender';
 import NavBar from './NavBar.js';
 import AddEventForm from './AddEventForm';
+import base from '../base';
+import DatePicker from 'react-date-picker';
 
 
 class Availability extends React.Component {
@@ -12,39 +13,35 @@ class Availability extends React.Component {
         super(props);
         this.state = {
             //set this to current month
-            month: 'Jan',
+            date: new Date(),
             events: {},  
             users: {},   
         };
         this.handleChange = this.handleChange.bind(this);
-        
-}
+    }
 
-    // sample events for development
-    loadSampleEvents = () => {
-        this.setState({ events: eventitems });
+    componentDidMount() {
+        this.ref = base.syncState('BadgerSett/events', {
+            context: this,
+            state: 'events'
+        });
     };
-
-
-    // load sample events
-   componentDidMount() {
-        this.loadSampleEvents();
-    } ;
-
+        
     //Test month selector
 
-    handleChange(event) {
-        this.setState({month: event.target.value});
-    }
+    handleChange = date => this.setState({ date });
+
+    //MMYY string
+    //this.setState( [`${date.getMonth()}${date.getYear()}`]
 
     // Add Event state
 
     addEvent = event => {
         // 1. Take a copy of the existing state
         const events = { ...this.state.events };
-        // 2. Add our new fish to that fishes variable
+        // 2. Add our new event to that events variable
         events[`event${Date.now()}`] = event;
-        // 3. Set the new fishes object to state
+        // 3. Set the new events object to state
         this.setState({ events });
         };
     
@@ -54,15 +51,17 @@ class Availability extends React.Component {
             <React.Fragment>
                 <NavBar />
                 <h2>Availability</h2>
-                <select value={this.state.month} onChange={this.handleChange}>
-                    <option value="Jan">Jan</option>
-                    <option value="Feb">Feb</option>
-                    <option value="Mar">Mar</option>
-                    <option value="Apr">Apr</option>
-                </select>
+                <h4>Select Month:</h4>
+                <DatePicker
+                    onChange={this.handleChange}
+                    value={this.state.date}
+                    maxDetail="year"
+                    minDetail="year" 
+                    dateFormat="DD/MM/YYYY" 
+                />
                 {/* Filter based on selected month and display all events */}
                 {Object.keys(this.state.events)
-                .filter(key => this.state.events[key].month === this.state.month)
+                .filter(key => this.state.events[key].month === this.state.date.getMonth())
                 .map(key => (
                     <Attender
                         key={key}

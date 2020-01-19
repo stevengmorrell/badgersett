@@ -1,15 +1,20 @@
 import React from 'react';
+//import Proptypes from 'prop-types';
 
+const Login = (props) => (
+    <nav className="login">
+        <h3>Welcome! Please log in below</h3>
+        <button
+            className="facebook"
+            onClick={() => props.authenticate("Facebook")}
+        > 
+            Log in with Facebook
+        </button>
+    </nav>
+);
 
-
-class Login extends React.Component {
-    render() {
-        return (
-            <React.Fragment>
-                <p>Welcome! Please log in below.</p>
-            </React.Fragment>
-        )
-    }   
-}
+// Login.propTypes = {
+//     authenticate: Proptypes.func.isRequired
+// };
 
 export default Login;
