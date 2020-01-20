@@ -18,7 +18,7 @@ class NavBar extends React.Component {
                     </ul>
                 </div>
                 <div className="nav-right">
-                    <h5>Tom Wallis</h5>
+                    <h5>{this.props.uid}</h5>
                     <h5>Settings</h5>
                     <h5>Log Out</h5>
                 </div>
