@@ -1,43 +1,76 @@
 import React from 'react';
-import eventitems from '../sample-event.js';
-import NavBar from './NavBar';
 import Attender from './Attender';
+import NavBar from './NavBar.js';
+import AddEventForm from './AddEventForm';
+import base from '../base';
+import DatePicker from 'react-date-picker';
 
 
 class Availability extends React.Component {
 
-    state = { events: {}
-    };
+    // create state
+    constructor(props) {
+        super(props);
+        this.state = {
+            //set this to current month
+            date: new Date(),
+            events: {},  
+            users: {},   
+        };
+        this.handleChange = this.handleChange.bind(this);
+    }
 
-    loadSampleEvents = () => {
-        this.setState({ events: eventitems });
+    componentDidMount() {
+        this.ref = base.syncState('BadgerSett/events', {
+            context: this,
+            state: 'events'
+        });
     };
+        
+    //Test month selector
 
-   componentDidMount() {
-        this.loadSampleEvents()
-    } ;
-      
+    handleChange = date => this.setState({ date });
+
+    //MMYY string
+    //this.setState( [`${date.getMonth()}${date.getYear()}`]
+
+    // Add Event state
+
+    addEvent = event => {
+        // 1. Take a copy of the existing state
+        const events = { ...this.state.events };
+        // 2. Add our new event to that events variable
+        events[`event${Date.now()}`] = event;
+        // 3. Set the new events object to state
+        this.setState({ events });
+        };
+    
     
     render() {
         return (
             <React.Fragment>
                 <NavBar />
                 <h2>Availability</h2>
-
-                {Object.keys(this.state.events).map(key => (
+                <h4>Select Month:</h4>
+                <DatePicker
+                    onChange={this.handleChange}
+                    value={this.state.date}
+                    maxDetail="year"
+                    minDetail="year" 
+                    dateFormat="DD/MM/YYYY" 
+                />
+                {/* Filter based on selected month and display all events */}
+                {Object.keys(this.state.events)
+                .filter(key => this.state.events[key].month === this.state.date.getMonth())
+                .map(key => (
                     <Attender
                         key={key}
                         index={key}
                         details={this.state.events[key]}
                     />
-                ))}
-
-
-
-                
-                {/* <Attender 
-                    events={this.state.events}
-                /> */}
+                    )
+                )}
+                <AddEventForm addEvent={this.addEvent}/>
             </React.Fragment>
         )
     }   

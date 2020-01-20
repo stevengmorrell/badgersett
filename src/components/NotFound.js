@@ -1,12 +1,16 @@
 import React from 'react';
-
-const NotFound = () => (
-    
-    <div>
-        <h2>Page Not Found!</h2>
-    </div>
-     
-);
+import NavBar from './NavBar';
 
 
-export default NotFound;
+class Settings extends React.Component {
+    render() {
+        return (
+            <React.Fragment>
+            <NavBar />
+                <p>Page Not Found!</p>
+            </React.Fragment>
+        )
+    }   
+}
+
+export default Settings;

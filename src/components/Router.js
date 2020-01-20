@@ -9,10 +9,10 @@ import Settings from './Settings';
 const Router = () => (
     <BrowserRouter>
         <Switch>
-            <Route path="/" exact component={Home} />
-            <Route exact path="/availability" component={Availability} />
-            <Route exact path="/lineups" component={Lineup} />
-            <Route exact path="/settings" component={Settings} />
+            <Route exact path="/" component={Home} />
+            <Route path="/availability" component={Availability} />
+            <Route path="/lineups" component={Lineup} />
+            <Route path="/settings" component={Settings} />
             <Route component={NotFound} />
         </Switch>
     </BrowserRouter>
