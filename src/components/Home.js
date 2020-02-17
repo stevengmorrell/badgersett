@@ -13,6 +13,22 @@ class Home extends React.Component {
     uid: null
   }
 
+  componentDidMount= () => {
+    firebaseApp.auth().onAuthStateChanged((user) => {
+      if (user) {
+        // User is signed in.
+        this.setState({
+          uid: user.uid
+        })
+        // ...
+      } else { 
+        // User is signed out.
+        console.log("No user")
+      }
+    })
+  };
+
+ 
 
   authHandler = async (authData) => {
 
