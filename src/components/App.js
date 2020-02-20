@@ -3,14 +3,18 @@ import React from 'react';
 import firebase from 'firebase';
 import Login from './Login';
 import Navbar from './NavBar';
-import  base, { firebaseApp } from '../base';
+import base, { firebaseApp } from '../base';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import NotFound from './NotFound';
+import Availability from './Availability';
+import Lineup from './Lineup';
+import Settings from './Settings';
 
-
-
-class Home extends React.Component {
+class App extends React.Component {
 
   state = {
-    uid: null
+    uid: null,
+    name: null,
   }
 
   componentDidMount= () => {
@@ -18,7 +22,8 @@ class Home extends React.Component {
       if (user) {
         // User is signed in.
         this.setState({
-          uid: user.uid
+          uid: user.uid,
+          name: user.displayName
         })
         // ...
       } else { 
@@ -35,8 +40,9 @@ class Home extends React.Component {
     // 1. Set User ID
     const uid = authData.user.uid;
     
+    
     this.setState({
-      uid: uid,
+      uid: uid
     });
 
     // 2. Look up user in the firebase database
@@ -81,21 +87,27 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div className="badger-sett">
-        <Navbar 
+        <div className="badger-sett">
+         <Router>
+         <>
+          <Navbar 
             name = {this.state.name}
-        />
-          {this.state.uid ? (
-            <h2>Welcome {this.state.name}</h2>
-          ) : (
-            <Login authenticate ={this.authenticate} />
-          )}
-
-
-      </div>
+          />
+        
+           <Switch>
+              <Route exact path="/" render={(props) => <Login {...props} authenticate = {this.authenticate} name = {this.state.name} uid = {this.state.uid} />}
+              />
+              <Route exact path="/availability" render={(props) => <Availability {...props} name = {this.state.name} uid = {this.state.uid} />}/>
+              <Route exact path="/lineups" render={(props) => <Lineup {...props} name = {this.state.name} uid = {this.state.uid} />}/>
+              <Route exact path="/settings" render={(props) => <Lineup {...props} name = {this.state.name} uid = {this.state.uid} />}/>
+              <Route component={NotFound} />
+            </Switch>
+            </>
+          </Router>
+        </div>
     );
   }
 
 }
 
-export default Home;
+export default App;

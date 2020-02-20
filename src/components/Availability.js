@@ -1,6 +1,5 @@
 import React from 'react';
 import Attender from './Attender';
-import NavBar from './NavBar.js';
 import AddEventForm from './AddEventForm';
 import base from '../base';
 import DatePicker from 'react-date-picker';
@@ -49,7 +48,7 @@ class Availability extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <NavBar />
+               
                 <h2>Availability</h2>
                 <h4>Select Month:</h4>
                 <DatePicker
