@@ -66,6 +66,7 @@ class Availability extends React.Component {
                         key={key}
                         index={key}
                         details={this.state.events[key]}
+                        uid={this.props.uid}
                     />
                     )
                 )}

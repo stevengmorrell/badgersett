@@ -99,7 +99,7 @@ class App extends React.Component {
               />
               <Route exact path="/availability" render={(props) => <Availability {...props} name = {this.state.name} uid = {this.state.uid} />}/>
               <Route exact path="/lineups" render={(props) => <Lineup {...props} name = {this.state.name} uid = {this.state.uid} />}/>
-              <Route exact path="/settings" render={(props) => <Lineup {...props} name = {this.state.name} uid = {this.state.uid} />}/>
+              <Route exact path="/settings" render={(props) => <Settings {...props} name = {this.state.name} uid = {this.state.uid} />}/>
               <Route component={NotFound} />
             </Switch>
             </>
