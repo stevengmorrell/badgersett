@@ -1,7 +1,41 @@
+//if yes, greyed on red, if no, greyed on green. greyed should make it not selectable
+//if doesnt exist, create username, allow both buttons to be pressed
+
+//create button press for each, updates database and greys correctly
+
 import React from 'react';
+import base from '../base';
 
 class Attender extends React.Component {
+
+    // create state
+    constructor(props) {
+      super(props);
+      this.state = {
+       attendance: {}
+      };
+
+  }
+
+  componentDidMount() {
+      this.ref = base.syncState(`BadgerSett/events/${this.props.index}/attendance/${this.props.uid}`, {
+          context: this,
+          state: 'attendance'
+      });
+  };
+      
+ 
+
+
+
   render() {
+    let attend = "attendbox"
+    let attenddis = true
+    let nattenddis = true
+    if (this.state.attendance.attending === "no") {attend += ' greyed'; attenddis = false}
+    let nattend = "nattendbox"
+    if (this.state.attendance.attending === "yes") {nattend += ' greyed'; nattenddis = false}
+    
     const {
       date,
       image,
@@ -10,7 +44,6 @@ class Attender extends React.Component {
       starttime,
       endtime,
       description,
-    // eslint-disable-next-line react/destructuring-assignment
     } = this.props.details;
     return (
       <React.Fragment>
@@ -33,8 +66,8 @@ class Attender extends React.Component {
             />
           </div>
           <div className="availbotrow">
-            <button className="attendbox">Attending</button>
-            <button className="nattendbox greyed">Not Attending</button>
+            <button disabled ={attenddis} className={attend} >Attending</button>
+            <button disabled ={nattenddis} className={nattend}>Not Attending</button>
           </div>
         </div>
       </React.Fragment>
