@@ -14,7 +14,6 @@ class Availability extends React.Component {
             //set this to current month
             date: new Date(),
             events: {},  
-            users: {},   
         };
         this.handleChange = this.handleChange.bind(this);
     }
