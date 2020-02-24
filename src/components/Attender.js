@@ -30,11 +30,11 @@ class Attender extends React.Component {
 
   render() {
     let attend = "attendbox"
-    let attenddis = true
-    let nattenddis = true
-    if (this.state.attendance.attending === "no") {attend += ' greyed'; attenddis = false}
+    let attenddis = false
+    let nattenddis = false
+    if (this.state.attendance.attending === "no") {attend += ' greyed'; nattenddis = true}
     let nattend = "nattendbox"
-    if (this.state.attendance.attending === "yes") {nattend += ' greyed'; nattenddis = false}
+    if (this.state.attendance.attending === "yes") {nattend += ' greyed'; attenddis = true}
     
     const {
       date,

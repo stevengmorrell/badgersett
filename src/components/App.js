@@ -66,9 +66,10 @@ class App extends React.Component {
       } 
       else { 
         // Create user
+        console.log(authData.user);
         this.ref = base.post(`BadgerSett/users/${uid}`, {
-        data: { name: authData.uid.displayName, 
-                email: authData.uid.email,
+        data: { name: authData.user.displayName, 
+                email: authData.user.email,
                 role: "unauthorised",
                 Pos1: "notset",
                 Pos2: "notset"
