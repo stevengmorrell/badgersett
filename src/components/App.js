@@ -9,6 +9,7 @@ import NotFound from './NotFound';
 import Availability from './Availability';
 import Lineup from './Lineup';
 import Settings from './Settings';
+import PrivateRoute from './PrivateRoute';
 
 class App extends React.Component {
 
@@ -66,9 +67,10 @@ class App extends React.Component {
       } 
       else { 
         // Create user
+        console.log(authData.user);
         this.ref = base.post(`BadgerSett/users/${uid}`, {
-        data: { name: authData.uid.displayName, 
-                email: authData.uid.email,
+        data: { name: authData.user.displayName, 
+                email: authData.user.email,
                 role: "unauthorised",
                 Pos1: "notset",
                 Pos2: "notset"
@@ -84,6 +86,16 @@ class App extends React.Component {
     firebaseApp.auth().signInWithPopup(authProvider).then(this.authHandler);
   };
 
+  signOut = () => {firebase.auth().signOut().then(function() {
+     
+        localStorage.clear();
+        window.location.href = '/';
+    
+  }).catch(function(error) {
+    // An error happened.
+  });
+}
+
 
   render() {
     return (
@@ -92,12 +104,14 @@ class App extends React.Component {
          <>
           <Navbar 
             name = {this.state.name}
+            signOut = {this.signOut}
           />
         
            <Switch>
               <Route exact path="/" render={(props) => <Login {...props} authenticate = {this.authenticate} name = {this.state.name} uid = {this.state.uid} />}
               />
               <Route exact path="/availability" render={(props) => <Availability {...props} name = {this.state.name} uid = {this.state.uid} />}/>
+              {/* <PrivateRoute exact path='/availability' component={Availability} render={(props) => <Availability {...props} name = {this.state.name} uid = {this.state.uid} />} /> */}
               <Route exact path="/lineups" render={(props) => <Lineup {...props} name = {this.state.name} uid = {this.state.uid} />}/>
               <Route exact path="/settings" render={(props) => <Settings {...props} name = {this.state.name} uid = {this.state.uid} />}/>
               <Route component={NotFound} />

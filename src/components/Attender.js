@@ -30,11 +30,11 @@ class Attender extends React.Component {
 
   render() {
     let attend = "attendbox"
-    let attenddis = true
-    let nattenddis = true
-    if (this.state.attendance.attending === "no") {attend += ' greyed'; attenddis = false}
+    let attenddis = false
+    let nattenddis = false
+    if (this.state.attendance.attending === "no") {attend += ' greyed'; nattenddis = true}
     let nattend = "nattendbox"
-    if (this.state.attendance.attending === "yes") {nattend += ' greyed'; nattenddis = false}
+    if (this.state.attendance.attending === "yes") {nattend += ' greyed'; attenddis = true}
     
     const {
       date,
@@ -45,6 +45,20 @@ class Attender extends React.Component {
       endtime,
       description,
     } = this.props.details;
+
+    let setAttend = () => { base.post(`BadgerSett/events/${this.props.index}/attendance/${this.props.uid}`, {
+      data: {attending: 'yes'}
+    }
+    )}  
+
+    let setNattend = () => { base.post(`BadgerSett/events/${this.props.index}/attendance/${this.props.uid}`, {
+      data: {attending: 'no'}
+    }
+    )}  
+
+
+
+
     return (
       <React.Fragment>
         <div className="availWrap">
@@ -66,8 +80,8 @@ class Attender extends React.Component {
             />
           </div>
           <div className="availbotrow">
-            <button disabled ={attenddis} className={attend} >Attending</button>
-            <button disabled ={nattenddis} className={nattend}>Not Attending</button>
+            <button onClick={setAttend} disabled ={attenddis} className={attend} >Attending</button>
+            <button onClick={setNattend} disabled ={nattenddis} className={nattend}>Not Attending</button>
           </div>
         </div>
       </React.Fragment>
