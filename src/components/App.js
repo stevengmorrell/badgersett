@@ -84,6 +84,16 @@ class App extends React.Component {
     firebaseApp.auth().signInWithPopup(authProvider).then(this.authHandler);
   };
 
+  signOut = () => {firebase.auth().signOut().then(function() {
+     
+        localStorage.clear();
+        window.location.href = '/';
+    
+  }).catch(function(error) {
+    // An error happened.
+  });
+}
+
 
   render() {
     return (
@@ -92,6 +102,7 @@ class App extends React.Component {
          <>
           <Navbar 
             name = {this.state.name}
+            signOut = {this.signOut}
           />
         
            <Switch>

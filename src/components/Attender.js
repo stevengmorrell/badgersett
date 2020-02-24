@@ -45,6 +45,20 @@ class Attender extends React.Component {
       endtime,
       description,
     } = this.props.details;
+
+    let setAttend = () => { base.post(`BadgerSett/events/${this.props.index}/attendance/${this.props.uid}`, {
+      data: {attending: 'yes'}
+    }
+    )}  
+
+    let setNattend = () => { base.post(`BadgerSett/events/${this.props.index}/attendance/${this.props.uid}`, {
+      data: {attending: 'no'}
+    }
+    )}  
+
+
+
+
     return (
       <React.Fragment>
         <div className="availWrap">
@@ -66,8 +80,8 @@ class Attender extends React.Component {
             />
           </div>
           <div className="availbotrow">
-            <button disabled ={attenddis} className={attend} >Attending</button>
-            <button disabled ={nattenddis} className={nattend}>Not Attending</button>
+            <button onClick={setAttend} disabled ={attenddis} className={attend} >Attending</button>
+            <button onClick={setNattend} disabled ={nattenddis} className={nattend}>Not Attending</button>
           </div>
         </div>
       </React.Fragment>

@@ -19,7 +19,7 @@ class AddEventForm extends React.Component {
         date: new Date(),
       }
 
-      onChange = date => this.setState({ date })
+    onChange = date => this.setState({ date })
 
     createEvent = e => {
         //1. Stop form from submitting
