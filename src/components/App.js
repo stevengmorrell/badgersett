@@ -9,6 +9,7 @@ import NotFound from './NotFound';
 import Availability from './Availability';
 import Lineup from './Lineup';
 import Settings from './Settings';
+import PrivateRoute from './PrivateRoute';
 
 class App extends React.Component {
 
@@ -110,6 +111,7 @@ class App extends React.Component {
               <Route exact path="/" render={(props) => <Login {...props} authenticate = {this.authenticate} name = {this.state.name} uid = {this.state.uid} />}
               />
               <Route exact path="/availability" render={(props) => <Availability {...props} name = {this.state.name} uid = {this.state.uid} />}/>
+              {/* <PrivateRoute exact path='/availability' component={Availability} render={(props) => <Availability {...props} name = {this.state.name} uid = {this.state.uid} />} /> */}
               <Route exact path="/lineups" render={(props) => <Lineup {...props} name = {this.state.name} uid = {this.state.uid} />}/>
               <Route exact path="/settings" render={(props) => <Settings {...props} name = {this.state.name} uid = {this.state.uid} />}/>
               <Route component={NotFound} />
