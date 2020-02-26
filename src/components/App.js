@@ -110,10 +110,10 @@ class App extends React.Component {
            <Switch>
               <Route exact path="/" render={(props) => <Login {...props} authenticate = {this.authenticate} name = {this.state.name} uid = {this.state.uid} />}
               />
-              <Route exact path="/availability" render={(props) => <Availability {...props} name = {this.state.name} uid = {this.state.uid} />}/>
-              {/* <PrivateRoute exact path='/availability'  component = {Availability} /> */}
-              <Route exact path="/lineups" render={(props) => <Lineup {...props} name = {this.state.name} uid = {this.state.uid} />}/>
-              <Route exact path="/settings" render={(props) => <Settings {...props} name = {this.state.name} uid = {this.state.uid} />}/>
+              {/*<Route exact path="/availability" render={(props) => <Availability {...props} name = {this.state.name} uid = {this.state.uid} />}/> */}
+              <PrivateRoute path='/availability' component={Availability} uid={this.state.uid} /> 
+              <PrivateRoute path="/lineups" component={Lineup} uid = {this.state.uid} />}/>
+              <PrivateRoute path="/settings" component={Settings} uid = {this.state.uid} />}/>
               <Route component={NotFound} />
             </Switch>
             </>

@@ -7,20 +7,23 @@ import {
 
 
 
- const PrivateRoutea = ({ component: Component, ...rest }) => (
+ const PrivateRoutea = ({ component: Component, uid, path }) => (
           
-            <Route {...rest} render={(props) => (
-              props.uid
+            <Route exact path={path} render={(props) => (
+              uid
                 ? <Component {...props} />
                 : <Redirect to='/xx' />
             )} />
           )
+ 
 
-
-export default function PrivateRoute () {
-    
+export default function PrivateRoute (props) {
+ 
         return (
-          <PrivateRoutea />      
+          
+          <PrivateRoutea 
+            {...props}
+          />      
         )
     }   
 
