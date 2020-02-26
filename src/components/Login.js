@@ -8,16 +8,16 @@ const Login = (props) => (
             {props.uid ? (
                 <h2>Welcome {props.name}</h2>
             ) : (
-                <div>
-                    <h3>Welcome! Please log in below</h3>
-                    <button
-                        className="facebook"
-                        onClick={() => props.authenticate("Facebook")}
-                        > 
-                        Log in with Facebook
+                    <div>
+                        <h3>Welcome! Please log in below</h3>
+                        <button
+                            className="facebook"
+                            onClick={() => props.authenticate("Facebook")}
+                        >
+                            Log in with Facebook
                     </button>
-                </div>
-            )}
+                    </div>
+                )}
         </nav>
     </React.Fragment>
 );
