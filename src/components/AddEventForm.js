@@ -3,7 +3,7 @@ import DatePicker from 'react-date-picker';
 //import 'react-calendar/dist/Calendar.css';
 
 class AddEventForm extends React.Component {
-    
+
     dateRef = React.createRef();
     descriptionRef = React.createRef();
     endtimeRef = React.createRef();
@@ -17,7 +17,7 @@ class AddEventForm extends React.Component {
 
     state = {
         date: new Date(),
-      }
+    }
 
     onChange = date => this.setState({ date })
 
@@ -44,19 +44,19 @@ class AddEventForm extends React.Component {
 
     render() {
         return (
-            <React.Fragment>             
+            <React.Fragment>
                 <p>Add Event</p>
                 <form className="event-edit" onSubmit={this.createEvent}>
-                    <DatePicker 
+                    <DatePicker
                         onChange={this.onChange}
                         value={this.state.date}
-                        minDetail="month"    
+                        minDetail="month"
                         ref={this.dateRef}
-                        
+
                     />
                     <input name="name" type="text" placeholder="Name" ref={this.nameRef} />
-                   {//} <input name="month" type="text" placeholder="Month" ref={this.monthRef} />
-                   }
+                    {//} <input name="month" type="text" placeholder="Month" ref={this.monthRef} />
+                    }
                     {//<input name="date" type="text" placeholder="Date" ref={this.dateRef} />
                     }
                     <input name="starttime" type="text" placeholder="Start time" ref={this.starttimeRef} />
@@ -67,11 +67,11 @@ class AddEventForm extends React.Component {
                         <option value="Other">Other</option>
                     </select>
                     <input name="image" type="text" placeholder="Image" ref={this.imageRef} />
-                    <button type ="submit"> + Add Event</button>
-                </form>           
+                    <button type="submit"> + Add Event</button>
+                </form>
             </React.Fragment>
         )
-    }   
+    }
 }
 
 export default AddEventForm;
