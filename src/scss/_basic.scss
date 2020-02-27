@@ -1,0 +1,246 @@
+html {
+	font-family: 'Gudea', sans-serif;
+	font-size: 18px;
+	
+	color:#2b2c30;
+	line-height: 21px;
+}
+
+h1, h2 {
+	margin-top:0;
+	font-family: 'Fjalla One', sans-serif ;
+}
+
+footer *{
+	margin-bottom:0;
+	font-size:14px;
+}
+
+.event-creator {
+	padding:0 15px;
+	max-width:600px;
+	margin:0 auto;
+	.error-message {
+		background: #912727;
+		padding:8px;
+		color:white;
+		font-size:14px;
+	}
+	label {
+		width:100%;
+		&.error {
+			input {
+				border-color:#912727;
+			}
+		}
+	}
+	input {
+		width:100%;
+		border:2px solid lightgrey;
+		margin-bottom:15px;
+		padding:15px;
+		&[type="submit"] {
+			border:none;
+			background: #592c92;
+			color:white;
+		    font-size:16px;
+		    border-radius: 8px;
+			font-family: 'Fjalla One', sans-serif ;
+			
+		}
+	}
+	textarea {
+		width:100%;
+		border:2px solid lightgrey;
+		margin-bottom:15px;
+		padding:15px;
+		height:100px;
+	}
+	select {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		border: 2px solid lightgrey;
+	    width: 100%;
+	    border-radius: 35px;
+	    padding: 15px;
+	    margin-bottom: 15px;
+	    background:url('../images/down.png');
+	    background-position: right top;
+		background-repeat: no-repeat;
+	}
+	h2 {
+		font-size:21px;
+		line-height:26px;
+		margin-bottom: 10px;
+	}
+}
+
+header.header {
+	background: #592c92;
+	padding:20px 30px;
+	height:90px;
+	nav {
+		ul {
+			overflow: hidden;
+			margin:0;
+			li {
+				float:left;
+				margin-right:10px;
+				&:last-child {
+					float:right;
+				}
+				a {
+					color:white;
+					text-decoration: none;
+					font-size: 16px;
+					img {
+						display:block;
+						height: 20px;
+						width:auto;
+					}
+				}
+			}
+		}
+	}
+}
+
+.login {
+	background: rgb(66,33,107);
+	background: linear-gradient(0deg, rgba(66,33,107,1) 0%, rgba(89,44,146,1) 100%);
+	height:100vh;
+	.login-buttons {
+		width:100%;
+		max-width:300px;
+		position:Absolute;
+		top:50%;
+		left:50%;
+		transform:translate(-50%,-50%);
+		img {
+			margin: 0 auto;
+		    display: block;
+		    margin-bottom: 35px;
+		}
+		a {
+			display: block;
+		    width: 100%;
+		    background: white;
+		    text-align: center;
+		    margin-bottom: 15px;
+		    padding: 15px;
+		    text-decoration: none;
+			text-transform: uppercase;
+		    &.facebook {
+			    color: #592c92;
+				font-family: 'Fjalla One', sans-serif ;
+		    }
+		    &.google {
+				color: #592c92;
+				font-family: 'Fjalla One', sans-serif ;
+		    	background: #f3f4f9;
+		    }
+		}
+	}
+}
+
+section {
+	background: white;
+	border-radius: 30px 30px 0 0;
+	padding:15px;
+	margin-top:-30px;
+	h1 {
+		margin-top:0;
+		font-size:21px;
+		line-height:26px;
+		padding:0 15px;
+		text-transform: uppercase;
+	}
+	.events {
+		margin-left:-15px;
+		display: -webkit-flex;
+	  display: -ms-flexbox;
+	  display: flex;
+	  overflow: hidden;
+		flex-wrap:wrap;
+	}
+	article {
+		flex: 1;
+		width:300px;
+		padding-left:15px;
+		flex-basis: 33.33333%;
+		flex-grow: 0;
+		position:relative;
+		margin-bottom:15px;
+		@media (max-width: 950px){
+			flex-basis: 50%;
+		}
+		
+		@media (max-width: 650px){
+			flex-basis: 100%;
+		}
+		p, time {
+			margin: 0 0 10px 0;
+		}
+		header {
+			padding: 15px 15px 60px 15px;
+			border-radius: 15px;
+			background: #f3f4f9;
+			position: relative;
+			height:100%;
+			.attendance {
+				position: absolute;
+			    width: 100%;
+			    text-align: center;
+			    bottom: 15px;
+			    padding: 0 15px;
+				left: 0;
+			}
+			h2 {
+				font-size:21px;
+				line-height:26px;
+				margin-bottom: 10px;
+			}
+			time {
+			    display: block;
+			    color: #592c92;
+			}
+			svg {
+				transform: scale(0.7);
+			    display: inline-block;
+			    vertical-align: middle;
+			}
+			.who {
+				font-style: italic;
+				font-size:16px;
+				line-height:21px;
+				margin-top:-5px;
+			}
+			a {
+				&.attending {
+					padding: 10px;
+				    width: 50%;
+				    display: inline-block;
+				    background: #2e9127;
+				    text-align: center;
+				    color: white;
+				    text-decoration: none;
+				    border-radius: 8px 0 0 8px;
+				    font-size:16px;
+					font-family: 'Fjalla One', sans-serif ;
+				}
+				&.not-attending {
+					padding: 10px;
+				    width: 50%;
+				    display: inline-block;
+				    background: #912727;
+				    text-align: center;
+				    color: white;
+				    text-decoration: none;
+				    border-radius: 0 8px 8px 0;
+				    font-size:16px;
+					font-family: 'Fjalla One', sans-serif ;
+				}
+			}
+		}
+	}
+}
