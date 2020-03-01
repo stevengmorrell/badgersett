@@ -23,6 +23,8 @@ class NavBar extends React.Component {
                             <li><NavLink to='/' >Home</NavLink></li>
                             <li><NavLink to='/availability' activeClassName='navActive'>Availability</NavLink></li>
                             <li><NavLink to='/lineups' activeClassName='navActive'>Lineups</NavLink></li>
+                            <li><NavLink to='/eventmanagement' activeClassName='navActive'>Events</NavLink></li>
+                            <li><NavLink to='/selection' activeClassName='navActive'>Selection</NavLink></li>
                             {/* coach options to be inserted here */}
                         </ul>
                     ) : (

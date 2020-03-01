@@ -1,6 +1,5 @@
 import React from 'react';
 import Attender from './Attender';
-import AddEventForm from './AddEventForm';
 import base from '../base';
 import DatePicker from 'react-date-picker';
 
@@ -25,23 +24,9 @@ class Availability extends React.Component {
         });
     };
 
-    //Test month selector
+    //Month selector
 
     handleChange = date => this.setState({ date });
-
-    //MMYY string
-    //this.setState( [`${date.getMonth()}${date.getYear()}`]
-
-    // Add Event state
-
-    addEvent = event => {
-        // 1. Take a copy of the existing state
-        const events = { ...this.state.events };
-        // 2. Add our new event to that events variable
-        events[`event${Date.now()}`] = event;
-        // 3. Set the new events object to state
-        this.setState({ events });
-    };
 
 
     render() {
@@ -57,7 +42,6 @@ class Availability extends React.Component {
                     minDetail="year"
                     dateFormat="DD/MM/YYYY"
                 />
-                {/* Filter based on selected month and display all events */}
                 {Object.keys(this.state.events)
                     .filter(key => this.state.events[key].month === this.state.date.getMonth())
                     .map(key => (
@@ -69,7 +53,7 @@ class Availability extends React.Component {
                         />
                     )
                     )}
-                <AddEventForm addEvent={this.addEvent} />
+                
             </React.Fragment>
         )
     }
