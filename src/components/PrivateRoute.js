@@ -9,7 +9,7 @@ const PrivateRoutea = ({ component: Component, uid, path }) => (
   <Route exact path={path} render={(props) => (
     uid
       ? <Component uid={uid} />
-      : <Redirect to='/xx' />
+      : <Redirect to='/' />
   )} />
 )
 
