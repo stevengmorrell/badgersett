@@ -39,26 +39,18 @@ class EventAttendance extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <h2>{this.props.selectedSession}</h2>
                 <h3>Attending</h3>
-
                 {Object.keys(this.state.players)
                 .filter(key => this.state.players[key].attending === "yes")
-                .map(key => <p>{this.state.playerNames[key].name}</p>)
+                .map(key => <p>{this.state.playerNames[key].name} - {this.state.playerNames[key].Pos1}/{this.state.playerNames[key].Pos2}</p>)
                 }
 
                 <h3>Declined</h3>
 
                 {Object.keys(this.state.players)
                 .filter(key => this.state.players[key].attending === "no")
-                .map(key => <p>{this.state.playerNames[key].name}</p>)
+                .map(key => <p>{this.state.playerNames[key].name} - {this.state.playerNames[key].Pos1}/{this.state.playerNames[key].Pos2}</p>)
                 }
-
-                <h3>No response</h3>
-
-                <p>map through full player list for names in event.attendance</p>
-
-
 
             </React.Fragment>
 
