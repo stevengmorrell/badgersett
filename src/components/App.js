@@ -112,7 +112,7 @@ class App extends React.Component {
             />
 
             <Switch>
-              <Route exact path="/" render={(props) => <Login {...props} authenticate={this.authenticate} name={this.state.name} uid={this.state.uid} />}
+              <Route exact path="/" render={(props) => <Login {...props} authenticate={this.authenticate} name={this.state.name} uid={this.state.uid} role={this.state.role}/>}
               />
               <PrivateRoute path='/availability' component={Availability} uid={this.state.uid} />
               <PrivateRoute path="/lineups" component={Lineup} uid={this.state.uid} />}/>

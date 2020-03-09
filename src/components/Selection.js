@@ -38,7 +38,7 @@ class Selection extends React.Component {
         return (
             <React.Fragment>
                 <h1>Selection</h1>
-                <p>Pick a session (Name - Date)</p>
+                <br />
                 <select value={this.state.selectedSession} onChange={this.handleChange}>
                     <option defaultValue="selected">Select a session</option>
                     {Object.keys(this.state.events)
