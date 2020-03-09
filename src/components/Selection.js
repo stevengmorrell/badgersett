@@ -38,16 +38,18 @@ class Selection extends React.Component {
         return (
             <React.Fragment>
                 <h1>Selection</h1>
-                <p>Pick a session (Name - Date)</p>
+                <br />
                 <select value={this.state.selectedSession} onChange={this.handleChange}>
                     <option defaultValue="selected">Select a session</option>
                     {Object.keys(this.state.events)
                         .map(key => (
-                            <option key={key} value={key}>{key}</option>)
+                           
+                           <option key={key} value={key}>{this.state.events[key].date}-{this.state.events[key].name}</option>
+                           )
                         )
                     }
                 </select>
-                <EventAttendance selectedSession={this.state.selectedSession} />
+                <EventAttendance selectedSession={this.state.selectedSession} selectedPlayer/>
             </React.Fragment>
 
         )
@@ -56,5 +58,7 @@ class Selection extends React.Component {
 
 
 export default Selection;
+
+
 
 
