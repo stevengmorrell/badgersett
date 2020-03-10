@@ -37,7 +37,9 @@ class NavBar extends React.Component {
                     {this.props.name ? (
                         <React.Fragment>
                             <h5>{this.props.name}</h5>
-                            <h5>Settings</h5>
+                            <h5>
+                            <NavLink to='/settings' activeClassName='navActive'>Settings</NavLink>
+                            </h5>
                             <button onClick={this.props.signOut}>
                                 <h5>Log Out</h5>
                             </button>

@@ -43,7 +43,6 @@ class App extends React.Component {
     // 1. Set User ID
     const uid = authData.user.uid;
 
-
     this.setState({
       uid: uid
     });
@@ -106,13 +105,18 @@ class App extends React.Component {
       <div className="badger-sett">
         <Router>
           <>
-            <Navbar
-              name={this.state.name}
-              signOut={this.signOut}
-            />
+            {this.state.uid ? (
+              <Navbar
+                name={this.state.name}
+                signOut={this.signOut}
+              />
+            ) : (
+                <div />
+              )}
+
 
             <Switch>
-              <Route exact path="/" render={(props) => <Login {...props} authenticate={this.authenticate} name={this.state.name} uid={this.state.uid} role={this.state.role}/>}
+              <Route exact path="/" render={(props) => <Login {...props} authenticate={this.authenticate} name={this.state.name} uid={this.state.uid} role={this.state.role} />}
               />
               <PrivateRoute path='/availability' component={Availability} uid={this.state.uid} />
               <PrivateRoute path="/lineups" component={Lineup} uid={this.state.uid} />}/>
