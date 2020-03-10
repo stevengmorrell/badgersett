@@ -38,7 +38,6 @@ class Attender extends React.Component {
 
     const {
       date,
-      image,
       location,
       name,
       starttime,
@@ -75,13 +74,6 @@ class Attender extends React.Component {
               <p>{location}</p>
               <p>{description}</p>
             </div>
-            <img
-              className="imgBox"
-              src={image}
-              alt="Football training"
-              width="80"
-              height="80"
-            />
           </div>
           <div className="availbotrow">
             <button onClick={setAttend} disabled={attenddis} className={attend} >Attending</button>
