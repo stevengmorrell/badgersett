@@ -3,6 +3,7 @@ import {
     AwesomeButtonSocial,
   } from 'react-awesome-button';
   import "react-awesome-button/dist/styles.css";
+  import logo from "../logo.png"
 //import Proptypes from 'prop-types';
 
 const Login = (props) => (
@@ -19,7 +20,7 @@ const Login = (props) => (
                 </>
             ) : (
                     <div>
-                        <h3>Welcome! Please log in below</h3>
+                        <img alt="BadgerSett logo" src={logo}/>
                         <AwesomeButtonSocial
                             className="facebook"
                             type="facebook"
