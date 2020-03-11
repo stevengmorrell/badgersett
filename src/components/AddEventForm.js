@@ -88,8 +88,8 @@ class AddEventForm extends React.Component {
                         maxDetail = {"minute"}
                     />
                    
-                    <textarea name="description" placeholder="Description" ref={this.descriptionRef} />
-                    <textarea name="location" placeholder="Location" ref={this.locationRef} />
+                    <input name="description" type="text" placeholder="Description" ref={this.descriptionRef} />
+                    <input name="location" type="text" placeholder="Location" ref={this.locationRef} />
                     
                     <button type="submit"> + Add Event</button>
                 </form>
