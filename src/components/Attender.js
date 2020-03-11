@@ -8,23 +8,23 @@ import base from '../base';
 
 class Attender extends React.Component {
 
-    // create state
-    constructor(props) {
-      super(props);
-      this.state = {
-       attendance: {}
-      };
+  // create state
+  constructor(props) {
+    super(props);
+    this.state = {
+      attendance: {}
+    };
 
   }
 
   componentDidMount() {
-      this.ref = base.syncState(`BadgerSett/events/${this.props.index}/attendance/${this.props.uid}`, {
-          context: this,
-          state: 'attendance'
-      });
+    this.ref = base.syncState(`BadgerSett/events/${this.props.index}/attendance/${this.props.uid}`, {
+      context: this,
+      state: 'attendance'
+    });
   };
-      
- 
+
+
 
 
 
@@ -32,13 +32,12 @@ class Attender extends React.Component {
     let attend = "attendbox"
     let attenddis = false
     let nattenddis = false
-    if (this.state.attendance.attending === "no") {attend += ' greyed'; nattenddis = true}
+    if (this.state.attendance.attending === "no") { attend += ' greyed'; nattenddis = true }
     let nattend = "nattendbox"
-    if (this.state.attendance.attending === "yes") {nattend += ' greyed'; attenddis = true}
-    
+    if (this.state.attendance.attending === "yes") { nattend += ' greyed'; attenddis = true }
+
     const {
       date,
-      image,
       location,
       name,
       starttime,
@@ -46,15 +45,19 @@ class Attender extends React.Component {
       description,
     } = this.props.details;
 
-    let setAttend = () => { base.post(`BadgerSett/events/${this.props.index}/attendance/${this.props.uid}`, {
-      data: {attending: 'yes'}
+    let setAttend = () => {
+      base.post(`BadgerSett/events/${this.props.index}/attendance/${this.props.uid}`, {
+        data: { attending: 'yes' }
+      }
+      )
     }
-    )}  
 
-    let setNattend = () => { base.post(`BadgerSett/events/${this.props.index}/attendance/${this.props.uid}`, {
-      data: {attending: 'no'}
+    let setNattend = () => {
+      base.post(`BadgerSett/events/${this.props.index}/attendance/${this.props.uid}`, {
+        data: { attending: 'no' }
+      }
+      )
     }
-    )}  
 
 
 
@@ -71,17 +74,10 @@ class Attender extends React.Component {
               <p>{location}</p>
               <p>{description}</p>
             </div>
-            <img
-              className="imgBox"
-              src={image}
-              alt="Football training"
-              width="80"
-              height="80"
-            />
           </div>
           <div className="availbotrow">
-            <button onClick={setAttend} disabled ={attenddis} className={attend} >Attending</button>
-            <button onClick={setNattend} disabled ={nattenddis} className={nattend}>Not Attending</button>
+            <button onClick={setAttend} disabled={attenddis} className={attend} >Attending</button>
+            <button onClick={setNattend} disabled={nattenddis} className={nattend}>Not Attending</button>
           </div>
         </div>
       </React.Fragment>

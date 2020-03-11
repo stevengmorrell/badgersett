@@ -4,23 +4,21 @@ import {
   Redirect
 } from 'react-router-dom'
 
+const PrivateRoutea = ({ component: Component, uid, path }) => (
 
-class PrivateRoute extends React.Component {
-    render() {
+  <Route exact path={path} render={(props) => (
+    uid
+      ? <Component uid={uid} />
+      : <Redirect to='/' />
+  )} />
+)
 
-        const PrivateRoute = ({ component: Component, ...rest }) => (
-            <Route {...rest} render={(props) => (
-              props.uid === true
-                ? <Component {...props} />
-                : <Redirect to='/' />
-            )} />
-          )
-        return (
-            
-          <PrivateRoute />
-                
-        )
-    }   
+export default function PrivateRoute(props) {
+  return (
+    <PrivateRoutea
+      {...props}
+    />
+  )
 }
 
-export default PrivateRoute;
+
