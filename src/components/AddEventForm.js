@@ -64,7 +64,8 @@ class AddEventForm extends React.Component {
 
     render() {
         return (
-            <React.Fragment>
+            <section>
+                <h1>Event Management</h1>
                 <h3>Add Event</h3>
                 <form className="event-edit" onSubmit={this.createEvent}>
 
@@ -93,7 +94,7 @@ class AddEventForm extends React.Component {
                     
                     <button type="submit"> + Add Event</button>
                 </form>
-            </React.Fragment>
+            </section>
         )
     }
 }

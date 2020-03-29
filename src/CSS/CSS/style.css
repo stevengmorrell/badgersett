@@ -1,0 +1,1042 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Main Stylesheet
+
+Here's where the magic happens. Here, you'll see we are calling in
+the separate media queries. The base mobile goes outside any query
+and is called at the beginning, after that we call the rest
+of the styles inside media queries.
+******************************************************************/
+/*! normalize.css 2012-07-07T09:50 UTC - http://github.com/necolas/normalize.css */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&family=Gudea&display=swap");
+
+/*
+ * Corrects `block` display not defined in IE6/7/8/9 & FF3.
+ */
+/* line 11, ../scss/_normalize.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/*
+ * Corrects `inline-block` display not defined in IE6/7/8/9 & FF3.
+ */
+/* line 29, ../scss/_normalize.scss */
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+/*
+ * Prevents modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS5 devices.
+ */
+/* line 42, ../scss/_normalize.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/*
+ * Addresses styling for `hidden` attribute not present in IE7/8/9, FF3, S4.
+ * Known issue: no IE6 support.
+ */
+/* line 52, ../scss/_normalize.scss */
+[hidden] {
+  display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/*
+ * 1. Corrects text resizing oddly in IE6/7 when body `font-size` is set using
+ *    `em` units.
+ * 2. Prevents iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+/* line 67, ../scss/_normalize.scss */
+html {
+  font-size: 100%;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/*
+ * Addresses `font-family` inconsistency between `textarea` and other form
+ * elements.
+ */
+/* line 78, ../scss/_normalize.scss */
+html,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif;
+}
+
+/*
+ * Addresses margins handled incorrectly in IE6/7.
+ */
+/* line 90, ../scss/_normalize.scss */
+body {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/*
+ * Addresses `outline` inconsistency between Chrome and other browsers.
+ */
+/* line 102, ../scss/_normalize.scss */
+a:focus {
+  outline: thin dotted;
+}
+
+/*
+ * Improves readability when focused and also mouse hovered in all browsers.
+ * people.opera.com/patrickl/experiments/keyboard/test
+ */
+/* line 111, ../scss/_normalize.scss */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/*
+ * Addresses font sizes and margins set differently in IE6/7.
+ * Addresses font sizes within `section` and `article` in FF4+, Chrome, S5.
+ */
+/* line 125, ../scss/_normalize.scss */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* line 130, ../scss/_normalize.scss */
+h2 {
+  font-size: 1.5em;
+  margin: 0.83em 0;
+}
+
+/* line 135, ../scss/_normalize.scss */
+h3 {
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
+/* line 140, ../scss/_normalize.scss */
+h4 {
+  font-size: 1em;
+  margin: 1.33em 0;
+}
+
+/* line 145, ../scss/_normalize.scss */
+h5 {
+  font-size: 0.83em;
+  margin: 1.67em 0;
+}
+
+/* line 150, ../scss/_normalize.scss */
+h6 {
+  font-size: 0.75em;
+  margin: 2.33em 0;
+}
+
+/*
+ * Addresses styling not present in IE7/8/9, S5, Chrome.
+ */
+/* line 159, ../scss/_normalize.scss */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/*
+ * Addresses style set to `bolder` in FF3+, S4/5, Chrome.
+ */
+/* line 167, ../scss/_normalize.scss */
+b,
+strong {
+  font-weight: bold;
+}
+
+/* line 172, ../scss/_normalize.scss */
+blockquote {
+  margin: 1em 40px;
+}
+
+/*
+ * Addresses styling not present in S5, Chrome.
+ */
+/* line 180, ../scss/_normalize.scss */
+dfn {
+  font-style: italic;
+}
+
+/*
+ * Addresses styling not present in IE6/7/8/9.
+ */
+/* line 188, ../scss/_normalize.scss */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/*
+ * Addresses margins set differently in IE6/7.
+ */
+/* line 197, ../scss/_normalize.scss */
+p,
+pre {
+  margin: 1em 0;
+}
+
+/*
+ * Corrects font family set oddly in IE6, S4/5, Chrome.
+ * en.wikipedia.org/wiki/User:Davidgothberg/Test59
+ */
+/* line 207, ../scss/_normalize.scss */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  _font-family: "courier new", monospace;
+  font-size: 1em;
+}
+
+/*
+ * Improves readability of pre-formatted text in all browsers.
+ */
+/* line 220, ../scss/_normalize.scss */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/*
+ * Addresses CSS quotes not supported in IE6/7.
+ */
+/* line 230, ../scss/_normalize.scss */
+q {
+  quotes: none;
+}
+
+/*
+ * Addresses `quotes` property not supported in S4.
+ */
+/* line 238, ../scss/_normalize.scss */
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+/* line 244, ../scss/_normalize.scss */
+small {
+  font-size: 75%;
+}
+
+/*
+ * Prevents `sub` and `sup` affecting `line-height` in all browsers.
+ * gist.github.com/413930
+ */
+/* line 253, ../scss/_normalize.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 261, ../scss/_normalize.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 265, ../scss/_normalize.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Lists
+   ========================================================================== */
+/*
+ * Addresses margins set differently in IE6/7.
+ */
+/* line 277, ../scss/_normalize.scss */
+dl,
+menu,
+ol,
+ul {
+  margin: 1em 0;
+}
+
+/* line 284, ../scss/_normalize.scss */
+dd {
+  margin: 0 0 0 40px;
+}
+
+/*
+ * Addresses paddings set differently in IE6/7.
+ */
+/* line 292, ../scss/_normalize.scss */
+menu,
+ol,
+ul {
+  padding: 0 0 0 40px;
+}
+
+/*
+ * Corrects list images handled incorrectly in IE7.
+ */
+/* line 302, ../scss/_normalize.scss */
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/*
+ * 1. Removes border when inside `a` element in IE6/7/8/9, FF3.
+ * 2. Improves image quality when scaled in IE7.
+ *    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
+ */
+/* line 318, ../scss/_normalize.scss */
+img {
+  border: 0;
+  /* 1 */
+  -ms-interpolation-mode: bicubic;
+  /* 2 */
+}
+
+/*
+ * Corrects overflow displayed oddly in IE9.
+ */
+/* line 327, ../scss/_normalize.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/*
+ * Addresses margin not present in IE6/7/8/9, S5, O11.
+ */
+/* line 339, ../scss/_normalize.scss */
+figure {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/*
+ * Corrects margin displayed oddly in IE6/7.
+ */
+/* line 351, ../scss/_normalize.scss */
+form {
+  margin: 0;
+}
+
+/*
+ * Define consistent border, margin, and padding.
+ */
+/* line 359, ../scss/_normalize.scss */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/*
+ * 1. Corrects color not being inherited in IE6/7/8/9.
+ * 2. Corrects text not wrapping in FF3.
+ * 3. Corrects alignment displayed oddly in IE6/7.
+ */
+/* line 371, ../scss/_normalize.scss */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  white-space: normal;
+  /* 2 */
+  *margin-left: -7px;
+  /* 3 */
+}
+
+/*
+ * 1. Corrects font size not being inherited in all browsers.
+ * 2. Addresses margins set differently in IE6/7, FF3+, S5, Chrome.
+ * 3. Improves appearance and consistency in all browsers.
+ */
+/* line 384, ../scss/_normalize.scss */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  vertical-align: baseline;
+  /* 3 */
+  *vertical-align: middle;
+  /* 3 */
+}
+
+/*
+ * Addresses FF3/4 setting `line-height` on `input` using `!important` in the
+ * UA stylesheet.
+ */
+/* line 399, ../scss/_normalize.scss */
+button,
+input {
+  line-height: normal;
+}
+
+/*
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Corrects inability to style clickable `input` types in iOS.
+ * 3. Improves usability and consistency of cursor style between image-type
+ *    `input` and others.
+ * 4. Removes inner spacing in IE7 without affecting normal text inputs.
+ *    Known issue: inner spacing remains in IE6.
+ */
+/* line 414, ../scss/_normalize.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+  *overflow: visible;
+  /* 4 */
+}
+
+/*
+ * Re-set default cursor for disabled elements.
+ */
+/* line 427, ../scss/_normalize.scss */
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+
+/*
+ * 1. Addresses box sizing set to content-box in IE8/9.
+ * 2. Removes excess padding in IE8/9.
+ * 3. Removes excess padding in IE7.
+ *    Known issue: excess padding remains in IE6.
+ */
+/* line 439, ../scss/_normalize.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+  *height: 13px;
+  /* 3 */
+  *width: 13px;
+  /* 3 */
+}
+
+/*
+ * 1. Addresses `appearance` set to `searchfield` in S5, Chrome.
+ * 2. Addresses `box-sizing` set to `border-box` in S5, Chrome (include `-moz`
+ *    to future-proof).
+ */
+/* line 453, ../scss/_normalize.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/*
+ * Removes inner padding and search cancel button in S5, Chrome on OS X.
+ */
+/* line 464, ../scss/_normalize.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+ * Removes inner padding and border in FF3+.
+ */
+/* line 473, ../scss/_normalize.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/*
+ * 1. Removes default vertical scrollbar in IE6/7/8/9.
+ * 2. Improves readability and alignment in all browsers.
+ */
+/* line 484, ../scss/_normalize.scss */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/*
+ * Remove most spacing between table cells.
+ */
+/* line 497, ../scss/_normalize.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/******************************************************************
+CUSTOMIZED RESET VALUES
+I added these extra styles as a more personalized reset. Feel free
+to remove them if you like or add your own. If you want to update
+the normalize styles, make sure to edit from this point up.
+******************************************************************/
+/* line 510, ../scss/_normalize.scss */
+p {
+  -webkit-hyphens: auto;
+  -epub-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+
+/* line 517, ../scss/_normalize.scss */
+b,
+strong,
+.strong {
+  font-weight: bold;
+}
+
+/* line 519, ../scss/_normalize.scss */
+dfn,
+em,
+.em {
+  font-style: italic;
+}
+
+/* line 521, ../scss/_normalize.scss */
+small,
+.small {
+  font-size: 75%;
+}
+
+/* line 523, ../scss/_normalize.scss */
+ul,
+ol {
+  padding: 0;
+  list-style-type: none;
+}
+
+/* line 528, ../scss/_normalize.scss */
+dd {
+  margin: 0;
+}
+
+/* line 532, ../scss/_normalize.scss */
+.sidebar ul,
+.sidebar ol,
+.commentlist {
+  list-style: none;
+}
+
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Mixins & Constants Stylesheet
+
+This is where you can take advantage of Sass' great features:
+Mixins & Constants. I won't go in-depth on how they work exactly,
+there are a few articles below that will help do that. What I will
+tell you is that this will help speed up simple changes like
+changing a color or adding CSS3 techniques gradients.
+
+A WORD OF WARNING: It's very easy to overdo it here. Be careful and
+remember less is more.
+
+******************************************************************/
+/*********************
+CLEARFIXIN'
+*********************/
+/* line 23, ../scss/_mixins.scss */
+.clearfix {
+  zoom: 1;
+}
+/* line 25, ../scss/_mixins.scss */
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+/* line 26, ../scss/_mixins.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/*********************
+TOOLS
+*********************/
+/* line 34, ../scss/_mixins.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 41, ../scss/_mixins.scss */
+.image-replacement {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+/*
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
+*/
+/*********************
+TYPOGRAPHY
+*********************/
+/* 	To embed your own fonts, use this syntax
+	and place your fonts inside the
+	library/fonts folder. For more information
+	on embedding fonts, go to:
+	http://www.fontsquirrel.com/
+	Be sure to remove the comment brackets.
+*/
+/*	@font-face {
+    	font-family: 'Font Name';
+    	src: url('library/fonts/font-name.eot');
+    	src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
+             url('library/fonts/font-name.woff') format('woff'),
+             url('library/fonts/font-name.ttf') format('truetype'),
+             url('library/fonts/font-name.svg#font-name') format('svg');
+    	font-weight: normal;
+    	font-style: normal;
+	}
+*/
+/*
+use the best ampersand
+http://simplebits.com/notebook/2008/08/14/ampersands-2/
+*/
+/* line 107, ../scss/_mixins.scss */
+span.amp {
+  font-family: Baskerville, "Goudy Old Style", Palatino, "Book Antiqua", serif !important;
+  font-style: italic;
+}
+
+/* line 113, ../scss/_mixins.scss */
+.text-left {
+  text-align: left;
+}
+
+/* line 114, ../scss/_mixins.scss */
+.text-center {
+  text-align: center;
+}
+
+/* line 115, ../scss/_mixins.scss */
+.text-right {
+  text-align: right;
+}
+
+/* line 119, ../scss/_mixins.scss */
+.alert-help,
+.alert-info,
+.alert-error,
+.alert-success {
+  margin: 10px;
+  padding: 5px 18px;
+  border: 1px solid;
+}
+
+/* line 125, ../scss/_mixins.scss */
+.alert-help {
+  border-color: #e8dc59;
+  background: #ebe16f;
+}
+
+/* line 131, ../scss/_mixins.scss */
+.alert-info {
+  border-color: #bfe4f4;
+  background: #d5edf8;
+}
+
+/* line 137, ../scss/_mixins.scss */
+.alert-error {
+  border-color: #f8cdce;
+  background: #fbe3e4;
+}
+
+/* line 143, ../scss/_mixins.scss */
+.alert-success {
+  border-color: #deeaae;
+  background: #e6efc2;
+}
+
+/*********************
+TRANSITION
+*********************/
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include transition(all 0.2s ease-in-out);
+*/
+/*********************
+CSS3 GRADIENTS
+Be careful with these since they can
+really slow down your CSS. Don't overdue it.
+*********************/
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+/*********************
+BOX SIZING
+*********************/
+/* @include box-sizing(border-box); */
+/* NOTE: value of "padding-box" is only supported in Gecko. So
+probably best not to use it. I mean, were you going to anyway? */
+/*
+BASE (MOBILE) SIZE
+This are the mobile styles. It's what people see on their phones. If
+you set a great foundation, you won't need to add too many styles in
+the other stylesheets. Remember, keep it light: Speed is Important.
+*/
+/* line 1, ../scss/_basic.scss */
+html {
+  font-family: "Gudea", sans-serif;
+  font-size: 18px;
+  color: #2b2c30;
+  line-height: 21px;
+}
+
+/* line 9, ../scss/_basic.scss */
+h1,
+h2 {
+  margin-top: 0;
+  font-family: "Fjalla One", sans-serif;
+}
+
+/* line 14, ../scss/_basic.scss */
+footer * {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+/* line 19, ../scss/_basic.scss */
+.event-creator {
+  padding: 0 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+/* line 23, ../scss/_basic.scss */
+.event-creator .error-message {
+  background: #912727;
+  padding: 8px;
+  color: white;
+  font-size: 14px;
+}
+/* line 29, ../scss/_basic.scss */
+.event-creator label {
+  width: 100%;
+}
+/* line 32, ../scss/_basic.scss */
+.event-creator label.error input {
+  border-color: #912727;
+}
+/* line 37, ../scss/_basic.scss */
+.event-creator input {
+  width: 100%;
+  border: 2px solid lightgrey;
+  margin-bottom: 15px;
+  padding: 15px;
+}
+/* line 42, ../scss/_basic.scss */
+.event-creator input[type="submit"] {
+  border: none;
+  background: #592c92;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  font-family: "Fjalla One", sans-serif;
+}
+/* line 52, ../scss/_basic.scss */
+.event-creator textarea {
+  width: 100%;
+  border: 2px solid lightgrey;
+  margin-bottom: 15px;
+  padding: 15px;
+  height: 100px;
+}
+/* line 59, ../scss/_basic.scss */
+.event-creator select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 2px solid lightgrey;
+  width: 100%;
+  border-radius: 35px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background: url("../images/down.png");
+  background-position: right top;
+  background-repeat: no-repeat;
+}
+/* line 72, ../scss/_basic.scss */
+.event-creator h2 {
+  font-size: 21px;
+  line-height: 26px;
+  margin-bottom: 10px;
+}
+
+/* line 79, ../scss/_basic.scss */
+header.header {
+  background: #592c92;
+  padding: 20px 30px;
+  height: 90px;
+}
+/* line 84, ../scss/_basic.scss */
+header.header div ul {
+  overflow: hidden;
+  margin: 0;
+}
+/* line 87, ../scss/_basic.scss */
+header.header div ul li {
+  float: left;
+  margin-right: 10px;
+}
+/* line 90, ../scss/_basic.scss */
+header.header div button {
+  float: right;
+}
+/* line 93, ../scss/_basic.scss */
+header.header a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+/* line 97, ../scss/_basic.scss */
+header.header a img {
+  display: block;
+  height: 20px;
+  width: auto;
+}
+
+/* line 108, ../scss/_basic.scss */
+.login {
+  background: #42216b;
+  background: linear-gradient(0deg, #42216b 0%, #592c92 100%);
+  height: 100vh;
+}
+/* line 112, ../scss/_basic.scss */
+.login .login-buttons {
+  width: 100%;
+  max-width: 300px;
+  position: Absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* line 119, ../scss/_basic.scss */
+.login .login-buttons img {
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 35px;
+}
+/* line 124, ../scss/_basic.scss */
+.login .login-buttons .facebook-aws {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+/* line 133, ../scss/_basic.scss */
+.login .login-buttons a.facebook {
+  color: #592c92;
+  font-family: "Fjalla One", sans-serif;
+}
+/* line 137, ../scss/_basic.scss */
+.login .login-buttons a.google {
+  color: #592c92;
+  font-family: "Fjalla One", sans-serif;
+  background: #f3f4f9;
+}
+
+/* line 146, ../scss/_basic.scss */
+section {
+  background: white;
+  border-radius: 30px 30px 0 0;
+  padding: 15px;
+  margin-top: -30px;
+}
+/* line 151, ../scss/_basic.scss */
+section h1 {
+  margin-top: 0;
+  font-size: 21px;
+  line-height: 26px;
+  padding: 0 15px;
+  text-transform: uppercase;
+}
+/* line 158, ../scss/_basic.scss */
+section .events {
+  margin-left: -15px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+/* line 166, ../scss/_basic.scss */
+section article {
+  flex: 1;
+  width: 300px;
+  padding-left: 15px;
+  flex-basis: 33.33333%;
+  flex-grow: 0;
+  position: relative;
+  margin-bottom: 15px;
+}
+@media (max-width: 950px) {
+  /* line 166, ../scss/_basic.scss */
+  section article {
+    flex-basis: 50%;
+  }
+}
+@media (max-width: 650px) {
+  /* line 166, ../scss/_basic.scss */
+  section article {
+    flex-basis: 100%;
+  }
+}
+/* line 181, ../scss/_basic.scss */
+section article p,
+section article time {
+  margin: 0 0 10px 0;
+}
+/* line 184, ../scss/_basic.scss */
+section article header {
+  padding: 15px 15px 60px 15px;
+  border-radius: 15px;
+  background: #f3f4f9;
+  position: relative;
+  height: 100%;
+}
+/* line 190, ../scss/_basic.scss */
+section article header .attendance {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 15px;
+  padding: 0 15px;
+  left: 0;
+}
+/* line 198, ../scss/_basic.scss */
+section article header h2 {
+  font-size: 21px;
+  line-height: 26px;
+  margin-bottom: 10px;
+}
+/* line 203, ../scss/_basic.scss */
+section article header time {
+  display: block;
+  color: #592c92;
+}
+/* line 207, ../scss/_basic.scss */
+section article header svg {
+  transform: scale(0.7);
+  display: inline-block;
+  vertical-align: middle;
+}
+/* line 212, ../scss/_basic.scss */
+section article header .who {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 21px;
+  margin-top: -5px;
+}
+/* line 219, ../scss/_basic.scss */
+section article header a.attendbox {
+  padding: 10px;
+  width: 50%;
+  display: inline-block;
+  background: #2e9127;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px 0 0 8px;
+  font-size: 16px;
+  font-family: "Fjalla One", sans-serif;
+}
+
+/* line 231, ../scss/_basic.scss */
+section article header a.nattendbox {
+  padding: 10px;
+  width: 50%;
+  display: inline-block;
+  background: #912727;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  border-radius: 0 8px 8px 0;
+  font-size: 16px;
+  font-family: "Fjalla One", sans-serif;
+}
+
+section article header a.greyed {
+  background-color: buttonface !important;
+  color: #000 !important;
+}

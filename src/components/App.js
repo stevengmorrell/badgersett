@@ -88,7 +88,8 @@ class App extends React.Component {
     firebaseApp.auth().signInWithPopup(authProvider).then(this.authHandler);
   };
 
-  signOut = () => {
+  signOut = (e) => {
+    e.preventDefault();
     firebase.auth().signOut().then(function () {
 
       localStorage.clear();

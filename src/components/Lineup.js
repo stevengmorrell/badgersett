@@ -5,7 +5,10 @@ import React from 'react';
 class Lineup extends React.Component {
     render() {
         return (
-            <p>Lineups</p>
+            <section>
+                <h1>Lineups</h1>
+            </section>
+            
         )
     }
 }
