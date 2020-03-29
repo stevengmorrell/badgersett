@@ -31,17 +31,17 @@ class Availability extends React.Component {
 
     render() {
         return (
-            <React.Fragment>
+            <section>
 
-                <h2>Availability</h2>
-                <h4>Select Month:</h4>
-                <DatePicker
+                <h1>Availability</h1>
+                <h4>Select Month: <DatePicker
                     onChange={this.handleChange}
                     value={this.state.date}
                     maxDetail="year"
                     minDetail="year"
                     dateFormat="DD/MM/YYYY"
-                />
+                /></h4>
+               <div className="events">
                 {Object.keys(this.state.events)
                     .filter(key => this.state.events[key].month === this.state.date.getMonth())
                     .map(key => (
@@ -53,8 +53,9 @@ class Availability extends React.Component {
                         />
                     )
                     )}
+                </div>
                 
-            </React.Fragment>
+            </section>
         )
     }
 }

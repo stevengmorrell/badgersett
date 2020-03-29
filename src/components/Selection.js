@@ -36,7 +36,7 @@ class Selection extends React.Component {
 
     render() {
         return (
-            <React.Fragment>
+            <section>
                 <h1>Selection</h1>
                 <br />
                 <select value={this.state.selectedSession} onChange={this.handleChange}>
@@ -50,7 +50,7 @@ class Selection extends React.Component {
                     }
                 </select>
                 <EventAttendance selectedSession={this.state.selectedSession} selectedPlayer />
-            </React.Fragment>
+            </section>
 
         )
     }

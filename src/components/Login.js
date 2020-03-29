@@ -8,27 +8,28 @@ import {
 
 const Login = (props) => (
     <React.Fragment>
-        <nav className="login">
+        <nav>
 
             {props.uid ? (
-                <>
-                    <h2>Welcome {props.name}</h2>
+                <section>
+                    <h1>Welcome {props.name}</h1>
                     <h3>Team news</h3>
                     <p>Here is some Badger news from the Badgers.</p>
                     <p>Head to the Availability tab and update your attendance for upcoming sessions.</p>
                     <p>Check out upcoming lineups on the Lineups tab</p>
-                </>
-            ) : (
-                    <div>
+                </section>
+            ) : ( <div className="login">
+                    <div className="login-buttons">
                         <img alt="BadgerSett logo" src={logo}/>
                         <AwesomeButtonSocial
-                            className="facebook"
+                            className="facebook-aws"
                             type="facebook"
                             icon="true"
                             onPress={() => props.authenticate("Facebook")}
                             >
                             Log in with Facebook
                         </AwesomeButtonSocial>
+                    </div>
                     </div>
                 )}
         </nav>

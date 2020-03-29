@@ -24,8 +24,8 @@ class Settings extends React.Component {
 
     render() {
         return (
-            <>
-                <p>Settings</p>
+            <section>
+                <h1>Settings</h1>
                 <form>
                     <label>
                         Name:
@@ -60,7 +60,7 @@ class Settings extends React.Component {
                         </select>
                     </label>
                 </form>
-            </>
+            </section>
 
 
         )
